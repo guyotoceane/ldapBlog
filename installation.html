@@ -1,69 +1,189 @@
-
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <!--Base-->
-        <title>LDAP</title>
-		
-		<!--Meta-->
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		<!--Link-->
-		<link rel="stylesheet" href="Assets/css/bootstrap.min.css">
-		<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"-->
-		<link rel="stylesheet" href="Assets/css/css.css">
-		 
-		<!--Script JS-->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<head>
+    <!--Base-->
+    <title>LDAP</title>
 
-        
-    </head>
-    <body class="container-fluid">
-		
-		<header id="navigation">		
-			<nav class="navbar navbar-toggleable-sm navbar-inverse row ">
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-		
-				<a class="navbar-brand" href="#" ><h1>LDAP</h1></a>
-		
+    <!--Meta-->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-				<div class="menu justify-content-end collapse navbar-collapse" id="navbarColor01">
-					<ul>
-						<li>
-							<ul class="menu-lien navbar-nav justify-content-end">
-								<li class="nav-item active">
-									<a class="nav-link" href="index.html">Présentation</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link active" href="installation.html">Installation Unix</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="connexion.html">Connexion Php</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</header>
-		
-		<div id="content">
-		
+    <!--Link-->
+    <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"-->
+    <link rel="stylesheet" href="Assets/css/css.css">
+
+    <!--Script JS-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
 
 
-			<div class=" container">
-				<div class= "row">
-					wow
+</head>
+<body class="container-fluid">
 
-	
-	
-				</div>
-			</div>
-		</div>
-	</body>
+<header id="navigation">
+    <nav class="navbar navbar-toggleable-sm navbar-inverse row ">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="#"><h1>LDAP</h1></a>
+
+
+        <div class="menu justify-content-end collapse navbar-collapse" id="navbarColor01">
+            <ul>
+                <li>
+                    <ul class="menu-lien navbar-nav justify-content-end">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Présentation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="installation.html">Installation Unix</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="connexion.html">Connexion Php</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div id="content">
+
+
+    <div class=" container">
+
+            <h1>Installation sur Unix</h1>
+            <div>
+                LDAP possède plusieurs configurations : <br>
+
+                <ul>
+                    <li>
+                        Installation du paquet LDAP : <br>
+                        <div class="code">
+                            apt-get install ldap-server ldap-client
+                        </div>
+                    </li>
+
+                    <li>
+                        Fichier de configuration : <br>
+                        <div class="code">
+                            /etc/ldap/slapd.conf
+                        </div>
+                    </li>
+
+                    <li>
+                        Définition de la racine : <br>
+                        <div class="code">
+                            suffix "dc=domaine,dc=com"
+                        </div>
+                    </li>
+
+                    <li>
+                        Si les lignes rootdn et rootpw n’existent pas, il faut les rajouter. Cela permet de définir le login et le mot de passe de l’admin. : <br>
+                        <div class="code">
+                            rootdn "cn=admin,dc=mondomaine ,dc=com"<br>
+                            rootpw admin
+
+                        </div>
+                    </li>
+
+                    <li>
+                        Sécurisé (lecture seule) :
+                        <div class="code">
+                                access to * <br>
+                                &emsp;&emsp;by dn="cn=admin,dc=test,dc=com" write <br>
+                                &emsp;&emsp;by * read
+
+                        </div>
+                    </li>
+
+                    <li>
+                        Redémarrer ldap :
+                        <div class="code">
+                            /etc/init.d/slapd restart
+                        </div>
+                    </li>
+
+                    <li>
+                        Définition de la racine
+                        <div class="code">
+                            dn: dc=mondomaine,dc=com <br>
+                            objectClass: dcObject <br>
+                            objectClass: organization <br>
+                            o: Nom de la Societe <br>
+                            dc: mondedomaine <br>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        Ajouter un fichier à la racine
+                        <div class="code">
+                            ldapadd -x -D "cn=admin,dc=mondomaine,dc=com" -w admin -f NomDuFichier.ldif
+
+                        </div>
+                    </li>
+
+                    <li>
+                        Fichier pour créer une fiche
+                        <div class="code">
+                            dn: cn=Prenom Nom,dc=mondomaine,dc=com <br>
+                            objectClass: inetOrgPerson <br>
+                            cn: Prenom Nom <br>
+                            givenName: Prenom <br>
+                            sn: Nom <br>
+
+
+                        </div>
+                    </li>
+
+                    <li>
+                        Fichier pour supprimer une fiche :
+                        <div class="code">
+                            dn: cn=Tony GALMICHE,dc=mondomaine,dc=com <br>
+                            changetype: delete
+                        </div>
+                    </li>
+
+                    <li>
+                        Commande pour supprimer une fiche :
+                        <div class="code">
+                            ldapdelete -x -v -D "cn=admin,dc=mondomaine,dc=com" -w admin -f Nomdufichier.ldif
+                        </div>
+                    </li>
+
+                    <li>
+                        Fichier pour modifier une fiche :
+                        <div class="code">
+                            dn: cn=Tony GALMICHE,dc=mondomaine,dc=com <br>
+                            changetype: modify <br>
+                            replace: givenName <br>
+                            givenName: NouveauPrenom
+                        </div>
+                    </li>
+
+                    <li>
+                        Commande pour modifier une fiche :
+                        <div class="code">
+                            ldapmodify -x -v -D "cn=admin,dc=mondomaine,dc=com" -w admin -f Nomdufichier.ldif
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+    </div>
+</div>
+</body>
 </html>

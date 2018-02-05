@@ -57,12 +57,60 @@
 
 
 			<div class=" container">
-				<div class= "row">
-					wow
+				<h1>Connexion à PHP</h1>
 
-	
-	
+				<div>
+					Il y a 3 commandes importante pour une connexion avec un service ldap : <br>
+					<ul>
+						<li>
+							Pour la connexion, on peut utiliser en php la commande ldap connect
+							<div class="code">
+								resource ldap_connect ([ string $hostname = NULL [, int $port = 389]] )
+							</div>
+						</li>
+						<li>
+							L’authentification passe par la commande ldap_bind
+							<div class="code">
+								ldap_bind ( resource $link_identifier [, string $bind_rdn = NULL[, string $bind_password = NULL ]] )
+							</div>
+						</li>
+						<li>
+							Pour rechercher sur le ldap, il y a ldap_search
+							<div class="code">
+								resource ldap_search ( resource $link_identifier , string $base_dn , string $filter [, array $attributes [, int $attrsonly [, int$sizelimit [, int $timelimit [, int $deref ]]]]] )
+							</div>
+						</li>
+					</ul>
+
 				</div>
+
+				<h3>
+					Exemple
+				</h3>
+				<div class="code">
+					//connexion <br>
+					$dn="dc=mondomaine,dc=com";<br>
+					$rootdn="cn=admin,$dn";<br>
+					$rootpw="admin";<br>
+
+					$ds=ldap_connect("localhost",389); (ou 636 suivant la configuration)<br>
+					ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3); //version<br>
+					ldap_bind($ds,$rootdn,$rootpw)<br>
+					or die ("Impossible de se connecter au serveur !");<br>
+					echo "Authentification";<br>
+<br>
+					//verification<br>
+					$sr=ldap_search($ds,$dn,"(objectclass=*)");<br>
+					if ($sr) {<br>
+					&emsp;&emsp;$info=ldap_get_entries($ds,$sr); //lit toutes les resultat<br>
+					&emsp;&emsp;echo $info["count"]." enregistrements dans OpenLDAP \n";<br>
+					&emsp;&emsp;for ($i=0;$i<=$info["count"];$i++) {<br>
+					&emsp;&emsp;&emsp;&emsp;echo "$i - ".$info[$i]["dn"]." \n";<br>
+					&emsp;&emsp;}<br>
+					}<br>
+
+				</div>
+
 			</div>
 		</div>
 	</body>

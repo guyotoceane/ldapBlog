@@ -58,7 +58,35 @@
 
 			<div class=" container">
 				<div class= "row">
-					wow
+					<h1>Présentation de LDAP</h1>
+					<p>
+						LDAP (Lightweight Directory Access) est un ensemble de modèle et de protocole standardisé permettant de centraliser des informations et des données pour permettre une authentification. Il est souvent utilisé dans des grandes organisations pour que les utilisateurs n’est qu’un identifiant et un seul mot de passe pour se connecter à un ensemble de ressource digitale.
+					</p>
+
+
+					<p>LDAP utilise l’encodage UTF-8. Il y a plusieurs configuration, la plus commune est le SASL (Simple Authentication and Security Layer)</p>
+
+					<h3>La hiérarchisation</h3>
+					<p>
+
+						La structure est hiérarchique avec des branches pour classer les informations. Les premières branches et la racine utilise le plus couramment le nom de domaine (dc= domain components)Les branches plus profondes de l'annuaire peuvent représenter des unités d'organisation ou des groupes (ou= organizational units). Puis chaque fiche (ou personne) possedent un nom commun (cn=) et un identifiant (uid= user identifier) mais aussi des informations qui peuvent être rajouté (sn=, givenName=, l=, mail= ….) . La structure peut être differente suivant l’entreprise/organisation.
+					</p>
+
+					<h3>Les ports</h3>
+					<p>
+						LDAP utilise de base le port 389. Mais il est aussi possible d’ouvrir le port 636 pour sécuriser les informations avec le SSL (Transport Layer Security)
+					</p>
+
+					<h3>Sources</h3>
+					<p>
+						http://uid.free.fr/Ldap/ldap.html <br>
+						https://www.howtoforge.com/linux_openldap_setup_server_client <br>
+						https://fr.wikibooks.org/wiki/Le_syst%C3%A8me_d%27exploitation_GNU-Linux/Les_annuaires_LDAP <br>
+						https://openclassrooms.com/courses/presentation-du-concept-d-annuaire-ldap <br>
+						https://coagul.org/drupal/article/installation-et-utilisation-openldap-sous-debian <br>
+						http://wawadeb.crdp.ac-caen.fr/iso/tmp/ressources/ldap/Gestion%20de%20l'annuaire.pdf
+
+					</p>
 
 	
 	
